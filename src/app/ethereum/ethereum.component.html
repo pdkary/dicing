@@ -1,0 +1,4 @@
+<input mat-input #user placeholder="Your ethereum address">
+<app-balance-box [EthBalance]="getBalance(this.accountService.getBalance(user))"
+[EBalance]="getEtherplayBalance(this.accountService.getEtherplayBalance(user))"
+[NBalance]="getNeoplayBalance(this.accountService.getNeoplayBalance(user))"></app-balance-box>
