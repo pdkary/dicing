@@ -7,32 +7,36 @@ import { BalanceCall } from './balanceCall';
   providedIn: 'root'
 })
 export class EtherscanService {
-  apiKey: string;
-  etherplay: string;
-  neoplay: string;
+  apiKey = 'ZZZWRDEJ5FQAHN51WRWTMN348WEICB9468';
+  etherplay = '0x895bf7ba386382141a53c65e8ac2b16769f7c811';
+  neoplay = '0x72eff9e6d24e9078a87f51e569ad5560bfb3fd40';
 
   headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });
-
-  urlEth1 = 'http://api.etherscan.io/api?module=account&action=balance&address=';
-  urlEth2: string = '&tag=latest&apikey=' + this.apiKey;
-
-  urlToken1 = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=';
-  urlToken2 = '&address=';
-  urlToken3: string = '&tag=latest&apikey=' + this.apiKey;
-
-  supplyUrl1 = 'https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=';
-  supplyUrl2 = '&apikey=' + this.apiKey;
-
   constructor(private http: HttpClient) { }
 
   getBalance(address: string): Observable<BalanceCall> {
-    return this.http.get<BalanceCall>(this.urlEth1 + address + this.urlEth2, { headers: this.headers });
+    return this.http.get<BalanceCall>(
+      `http://api.etherscan.io/api?module=account
+      &action=balance
+      &address=${address}
+      &tag=latest
+      &apikey=${this.apiKey}`, 
+      { headers: this.headers }
+    );
   }
 
   getTokenBalance(user: string, token: string): Observable<BalanceCall> {
-    return this.http.get<BalanceCall>(this.urlEth2 + token + this.urlToken2 + user + this.urlToken3, { headers: this.headers });
+    return this.http.get<BalanceCall>(
+      `https://api.etherscan.io/api?module=account
+      &action=tokenbalance
+      &contractaddress=${token}
+      &address=${user}
+      &tag=latest
+      &apikey=${this.apiKey}`, 
+      { headers: this.headers }
+    );
   }
 
   getNeoplayBalance(user: string): Observable<BalanceCall> {
@@ -44,6 +48,15 @@ export class EtherscanService {
   }
 
   getTokenSupply(token: string): Observable<BalanceCall> {
-    return this.http.get<BalanceCall>(this.supplyUrl1 + token + this.supplyUrl2, { headers: this.headers });
+    return this.http.get<BalanceCall>(
+      `https://api.etherscan.io/api?module=stats
+      &action=tokensupply
+      &contractaddress=${token}
+      &apikey=${this.apiKey}`, 
+      { headers: this.headers }
+    );
+  }
+  getTotalSupply(): Observable<BalanceCall> {
+    return this.getTokenSupply(this.neoplay);
   }
 }
