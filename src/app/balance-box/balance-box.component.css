@@ -1,0 +1,15 @@
+.container {
+    max-width: 14em;
+    max-height: 16em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.container * {
+    display: flex;
+    padding-left: 3%;
+}
+h3 {
+    background-color: #272b2ca4;
+    color: #ffffff;
+    padding-top:10%;
+    margin-bottom: -10%;
+}

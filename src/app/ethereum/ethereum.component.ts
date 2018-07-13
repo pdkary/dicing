@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { EtherscanService } from '../etherscan.service';
 import { Observable, of } from 'rxjs';
-import { BalanceCall } from '../balanceCall';
+import { BalanceCall } from '../balanceCall'; 
+import { MDCTextField } from '@material/textfield';
+
+const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
 
 @Component({
   selector: 'app-ethereum',
@@ -25,7 +28,7 @@ export class EthereumComponent implements OnInit {
   getNeoplayBalance(observer: Observable<BalanceCall>) {
     observer.subscribe(data => this.nBalance = data.result);
   }
-  
+
   getEtherplayBalance(observer: Observable<BalanceCall>) {
     observer.subscribe(data => this.eBalance = data.result);
   }

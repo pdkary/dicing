@@ -18,23 +18,15 @@ export class EtherscanService {
 
   getBalance(address: string): Observable<BalanceCall> {
     return this.http.get<BalanceCall>(
-      `http://api.etherscan.io/api?module=account
-      &action=balance
-      &address=${address}
-      &tag=latest
-      &apikey=${this.apiKey}`, 
+      `http://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${this.apiKey}`,
       { headers: this.headers }
     );
   }
 
   getTokenBalance(user: string, token: string): Observable<BalanceCall> {
     return this.http.get<BalanceCall>(
-      `https://api.etherscan.io/api?module=account
-      &action=tokenbalance
-      &contractaddress=${token}
-      &address=${user}
-      &tag=latest
-      &apikey=${this.apiKey}`, 
+      // tslint:disable-next-line:max-line-length
+      `https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=${token}&address=${user}&tag=latest&apikey=${this.apiKey}`,
       { headers: this.headers }
     );
   }
@@ -48,11 +40,9 @@ export class EtherscanService {
   }
 
   getTokenSupply(token: string): Observable<BalanceCall> {
+    console.log(`https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=${token}&apikey=${this.apiKey}`);
     return this.http.get<BalanceCall>(
-      `https://api.etherscan.io/api?module=stats
-      &action=tokensupply
-      &contractaddress=${token}
-      &apikey=${this.apiKey}`, 
+      `https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=${token}&apikey=${this.apiKey}`,
       { headers: this.headers }
     );
   }

@@ -1,4 +1,22 @@
-<input mat-input #user placeholder="Your ethereum address">
-<app-balance-box [EthBalance]="getBalance(this.accountService.getBalance(user))"
-[EBalance]="getEtherplayBalance(this.accountService.getEtherplayBalance(user))"
-[NBalance]="getNeoplayBalance(this.accountService.getNeoplayBalance(user))"></app-balance-box>
+<mat-grid-list cols="4">
+    <mat-grid-tile colspan="4" class='ethLogo'>
+        <img src="../../assets/img/EthereumLogo.png">
+    </mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile colspan="2">
+        <!-- -->
+        <div class="mdc-text-field">
+                <input id="my-text-field" #user placeholder="Your ethereum address"> 
+                <label class="mdc-floating-label" for="my-text-field">Hint text</label>
+                <div class="mdc-line-ripple"></div>
+              </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-balance-box [EBalance]="100" [NBalance]="100" [EthBalance]="100"></app-balance-box>
+    <!-- <app-balance-box 
+    [EthBalance]="getBalance(this.accountService.getBalance(user))"
+    [EBalance]="getEtherplayBalance(this.accountService.getEtherplayBalance(user))"
+    [NBalance]="getNeoplayBalance(this.accountService.getNeoplayBalance(user))">
+    </app-balance-box> -->
+    </mat-grid-tile>
+</mat-grid-list>
