@@ -43,3 +43,10 @@ mat-slider {
 mat-chip {
     color: rgb(125, 177, 132);
 }
+.resultBox {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 5em;
+  width: 100%;
+  background-color: #FFD63B;
+  display: grid;
+}

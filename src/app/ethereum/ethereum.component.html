@@ -1,11 +1,15 @@
 <div class="container mat-elevation-z5">
-    <mat-grid-list cols="7" rowHeight="3:5">
+    <mat-grid-list cols="7" rowHeight="3:2">
         <mat-grid-tile colspan="4">
             <img class="ethLogo" src="../../assets/img/EthereumLogo.png">
         </mat-grid-tile>
         <mat-grid-tile colspan="3">
             <div class="space"></div>
         </mat-grid-tile>
+        <mat-grid-tile colspan="4"></mat-grid-tile>
+        <mat-grid-tile colspan="3" rowspan="3">
+                <app-balance-box [EthBalance]="ethBalance" [EBalance]="eBalance" [NBalance]="nBalance"></app-balance-box>
+            </mat-grid-tile>
         <mat-grid-tile colspan="4">
             <div class="bet-field">
                 <mat-form-field appearance="outline" class="address">
@@ -14,21 +18,33 @@
                 </mat-form-field>
                 <mat-form-field appearance="outline" class="bet">
                     <mat-label>Your Bet</mat-label>
-                    <input matInput>
+                    <mat-icon matSuffix svgIcon="Eth"></mat-icon>
+                    <input matInput [(ngModel)]="bet">
                 </mat-form-field>
-                <br>
-                <div class="sliderbox">
-                    <mat-slider [(ngModel)]="value"></mat-slider>
-                    <button mat-raised-button>Roll em</button>
-                    <p>{{value}}</p>
+            </div>
+        </mat-grid-tile>
+        
+        <mat-grid-tile colspan="4">
+            <div class="sliderbox">
+                <mat-slider thumbLabel [(ngModel)]="value"></mat-slider>
+                <button mat-raised-button>Roll em</button>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="4">
+            <div class="resultBox">
+                <div>
+                    <h4>Your Odds:</h4>
+                    {{getFraction()}}
+                </div>
+                <div>
+                    <h4>Your potential Winnings:</h4>
+                    {{bet*100 / value}}
                 </div>
             </div>
         </mat-grid-tile>
         <mat-grid-tile colspan="1">
             <div class="space"></div>
         </mat-grid-tile>
-        <mat-grid-tile>
-            <app-balance-box [EthBalance]="ethBalance" [EBalance]="eBalance" [NBalance]="nBalance"></app-balance-box>
-        </mat-grid-tile>
+
     </mat-grid-list>
 </div>

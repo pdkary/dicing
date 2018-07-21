@@ -5,9 +5,18 @@
   <div class="body">
     <mat-chip-list class="mat-chip-list-stacked">
       <p>Balances</p>
-      <mat-chip>Eth: {{EthBalance}}</mat-chip>
-      <mat-chip>Eplay: {{EBalance}}</mat-chip>
-      <mat-chip>Nplay: {{NBalance}}</mat-chip>
+      <mat-chip>
+        <mat-icon svgIcon="Eth"></mat-icon>
+        {{EthBalance}}
+      </mat-chip>
+      <mat-chip>
+        <mat-icon svgIcon="Neoplay"></mat-icon>
+        {{EBalance}}
+      </mat-chip>
+      <mat-chip>
+        <mat-icon svgIcon="Neoplay"></mat-icon>
+        {{NBalance}}
+      </mat-chip>
       <p>Total Token Supply</p>
       <mat-chip>{{totalSupply}} Tokens</mat-chip>
     </mat-chip-list>
