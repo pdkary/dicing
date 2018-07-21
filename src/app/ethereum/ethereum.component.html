@@ -18,7 +18,7 @@
                 </mat-form-field>
                 <br>
                 <div class="sliderbox">
-                    <mat-slider></mat-slider>
+                    <mat-slider [(ngModel)]="value"></mat-slider>
                     <button mat-raised-button>Roll em</button>
                     <p>{{value}}</p>
                 </div>

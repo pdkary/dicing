@@ -12,14 +12,14 @@ import { MatChipsModule } from '@angular/material/chips';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
+import { MatSliderModule, MatSlider } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { AppComponent } from './app.component';
 import { EthereumComponent } from './ethereum/ethereum.component';
 import { BalanceBoxComponent } from './balance-box/balance-box.component';
-import { SliderComponent } from './slider/slider.component';
+import { FormsModule } from '../../node_modules/@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -38,12 +38,12 @@ const appRoutes: Routes = [
     AppComponent,
     EthereumComponent,
     BalanceBoxComponent,
-    SliderComponent
   ],
   imports: [
     BrowserModule,
     MatGridListModule,
     MatListModule,
+    FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
@@ -55,7 +55,6 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatCheckboxModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

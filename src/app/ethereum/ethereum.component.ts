@@ -2,20 +2,12 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import { EtherscanService } from '../etherscan.service';
 import { Observable, of } from 'rxjs';
 import { BalanceCall } from '../balanceCall';
-import { NgModel, FormsModule } from '../../../node_modules/@angular/forms';
-import { BrowserModule } from '../../../node_modules/@angular/platform-browser';
-import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-ethereum',
   templateUrl: './ethereum.component.html',
   styleUrls: ['./ethereum.component.css']
 })
-@NgModule({
-  imports: [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent ],
-  bootstrap: [ AppComponent ]
-  })
 export class EthereumComponent implements OnInit {
 
   ethBalance: number;
