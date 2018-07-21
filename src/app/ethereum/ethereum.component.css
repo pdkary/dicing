@@ -1,0 +1,45 @@
+.container {
+  width: 90%;
+  height: 45em;
+  justify-content: center;
+  padding: 1em;
+}
+.ethLogo {
+  width: 70%;
+  margin-left: -15em;
+}
+app-balance-box {
+  float: right;
+  margin-top: -3em;
+}
+.input {
+  width: 5em;
+}
+mat-form-field {
+  width: 40%;
+  padding: 1em;
+}
+.address {
+  width: 60%;
+}
+.bet {
+  width: 30%;
+}
+mat-slider {
+  width: 70%;
+  margin-left: 1em;
+}
+.bet-field {
+  width: 100%;
+}
+.sliderbox {
+  width: 90%;
+}
+.sliderbox button {
+  float: right;
+  background-color:#FFD63B;
+  border-color: black;
+}
+mat-chip {
+    color: rgb(125, 177, 132);
+}

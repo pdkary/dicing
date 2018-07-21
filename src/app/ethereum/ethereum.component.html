@@ -1,4 +1,34 @@
-<input mat-input #user placeholder="Your ethereum address">
-<app-balance-box [EthBalance]="getBalance(this.accountService.getBalance(user))"
-[EBalance]="getEtherplayBalance(this.accountService.getEtherplayBalance(user))"
-[NBalance]="getNeoplayBalance(this.accountService.getNeoplayBalance(user))"></app-balance-box>
+<div class="container mat-elevation-z5">
+    <mat-grid-list cols="7" rowHeight="3:5">
+        <mat-grid-tile colspan="4">
+            <img class="ethLogo" src="../../assets/img/EthereumLogo.png">
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3">
+            <div class="space"></div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="4">
+            <div class="bet-field">
+                <mat-form-field appearance="outline" class="address">
+                    <mat-label>Ethereum Address</mat-label>
+                    <input matInput [value]="user">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="bet">
+                    <mat-label>Your Bet</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <br>
+                <div class="sliderbox">
+                    <mat-slider></mat-slider>
+                    <button mat-raised-button>Roll em</button>
+                    <p>{{value}}</p>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+            <div class="space"></div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <app-balance-box [EthBalance]="ethBalance" [EBalance]="eBalance" [NBalance]="nBalance"></app-balance-box>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

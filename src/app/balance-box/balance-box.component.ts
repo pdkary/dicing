@@ -11,22 +11,20 @@ import { THIS_EXPR } from '../../../node_modules/@angular/compiler/src/output/ou
 })
 export class BalanceBoxComponent implements OnInit {
 
-  @Input() EthBalance: string;
-  @Input() EBalance: string;
-  @Input() NBalance: string;
+  @Input() EthBalance: number;
+  @Input() EBalance: number;
+  @Input() NBalance: number;
   totalSupply: number;
-  percentage: number;
 
   constructor(private etherscanService: EtherscanService) { }
 
   ngOnInit() {
-    this.getTotalSupply(this.etherscanService.getNplaySupply());
+    this.getTotalSupply(this.etherscanService.getTotalSupply());
   }
 
   getTotalSupply(observer: Observable<BalanceCall>) {
-    observer.subscribe(data =>
-      this.totalSupply = Number.parseFloat(data.result);
-      console.log("updated totalSupply :"+this.totalSupply);
-    );
+    observer.subscribe(data => {
+      this.totalSupply = Number.parseFloat(data.result) / 10000;
+    });
   }
 }

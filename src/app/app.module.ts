@@ -1,15 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
-import { ModuleWithProviders, NgModule, Injectable } from '@angular/core';
-import { MatGridListModule, MatListModule, MatFormFieldModule, MatInputModule, MatCardModule } from '@angular/material';
-import { HttpModule } from '@angular/http';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import {
+  MatGridListModule,
+  MatListModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatCardModule
+} from '@angular/material';
+import { MatChipsModule } from '@angular/material/chips';
+import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 import { AppComponent } from './app.component';
 import { EthereumComponent } from './ethereum/ethereum.component';
 import { BalanceBoxComponent } from './balance-box/balance-box.component';
+import { SliderComponent } from './slider/slider.component';
 
 const appRoutes: Routes = [
-
   {
     path: 'home',
     component: AppComponent
@@ -18,14 +30,15 @@ const appRoutes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
+  }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     EthereumComponent,
-    BalanceBoxComponent
+    BalanceBoxComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
@@ -34,17 +47,15 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    HttpModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
-  ],
-  exports: [
-    AppComponent,
-    EthereumComponent,
-    BalanceBoxComponent
+    MatIconModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatChipsModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-@NgModule()
-export class AppModule { }
+export class AppModule {}

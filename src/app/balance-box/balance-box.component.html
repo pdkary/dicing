@@ -1,8 +1,15 @@
 <div class="container mat-elevation-z5">
-  <h3>You have</h3>
-  <p>Eth:   {{Ethbalance}}</p>
-  <p>EPlay:   {{Ebalance}}</p>
-  <p>NPlay:   {{Nbalance}}</p>
-  <br>
-  <p>Percent of supply: {{percentage}}</p>
+  <div class="header">
+    <h3>You Have</h3>
+  </div>
+  <div class="body">
+    <mat-chip-list class="mat-chip-list-stacked">
+      <p>Balances</p>
+      <mat-chip>Eth: {{EthBalance}}</mat-chip>
+      <mat-chip>Eplay: {{EBalance}}</mat-chip>
+      <mat-chip>Nplay: {{NBalance}}</mat-chip>
+      <p>Total Token Supply</p>
+      <mat-chip>{{totalSupply}} Tokens</mat-chip>
+    </mat-chip-list>
+  </div>
 </div>

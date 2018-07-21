@@ -1,0 +1,18 @@
+.container {
+    max-width: 23em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.header{
+    background-color: black;
+    height: 2em;
+    width: 100%;
+    border-radius: 5%;
+}
+h3 {
+    color:#ffffff;
+    margin-top:2em;
+}
+.body {
+    padding: 1em;
+    padding-top:0em;
+}
