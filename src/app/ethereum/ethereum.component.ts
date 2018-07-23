@@ -63,4 +63,7 @@ export class EthereumComponent implements OnInit {
       return fracList[0] + ':' + fracList[1];
     }
   }
+  getConfidence(): string {
+    return "placeholder";
+  }
 }

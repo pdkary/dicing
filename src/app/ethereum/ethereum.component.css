@@ -10,7 +10,8 @@
 }
 app-balance-box {
   float: right;
-  margin-top: -3em;
+  max-height: 20em;
+  display: flex;
 }
 .input {
   width: 5em;
@@ -31,22 +32,36 @@ mat-slider {
 }
 .bet-field {
   width: 100%;
+  display: flex;
 }
 .sliderbox {
   width: 90%;
 }
 .sliderbox button {
   float: right;
-  background-color:#FFD63B;
+  background-color: #ffd63b;
   border-color: black;
 }
-mat-chip {
-    color: rgb(125, 177, 132);
-}
 .resultBox {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin-left: 5em;
-  width: 100%;
-  background-color: #FFD63B;
-  display: grid;
+  width: 90%;
+  display: flex;
+  margin-right: 1em;
+}
+.resultBox div {
+  width: 90%;
+  text-align: center;
+}
+mat-chip-list {
+  display: flex;
+  justify-content: center;
+}
+.resultBox h4 {
+  width: 90%;
+  background-color: black;
+  color: white;
+  padding: .2em;
+  margin-top: -1em;
+  border-radius: .3em;
 }

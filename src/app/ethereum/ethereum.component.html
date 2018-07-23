@@ -1,5 +1,5 @@
 <div class="container mat-elevation-z5">
-    <mat-grid-list cols="7" rowHeight="3:2">
+    <mat-grid-list cols="7s" rowHeight="3:2">
         <mat-grid-tile colspan="4">
             <img class="ethLogo" src="../../assets/img/EthereumLogo.png">
         </mat-grid-tile>
@@ -7,9 +7,9 @@
             <div class="space"></div>
         </mat-grid-tile>
         <mat-grid-tile colspan="4"></mat-grid-tile>
-        <mat-grid-tile colspan="3" rowspan="3">
-                <app-balance-box [EthBalance]="ethBalance" [EBalance]="eBalance" [NBalance]="nBalance"></app-balance-box>
-            </mat-grid-tile>
+        <mat-grid-tile colspan="3" rowspan="4">
+            <app-balance-box [EthBalance]="ethBalance" [EBalance]="eBalance" [NBalance]="nBalance"></app-balance-box>
+        </mat-grid-tile>
         <mat-grid-tile colspan="4">
             <div class="bet-field">
                 <mat-form-field appearance="outline" class="address">
@@ -23,28 +23,42 @@
                 </mat-form-field>
             </div>
         </mat-grid-tile>
-        
         <mat-grid-tile colspan="4">
             <div class="sliderbox">
                 <mat-slider thumbLabel [(ngModel)]="value"></mat-slider>
                 <button mat-raised-button>Roll em</button>
             </div>
         </mat-grid-tile>
-        <mat-grid-tile colspan="4">
-            <div class="resultBox">
-                <div>
-                    <h4>Your Odds:</h4>
-                    {{getFraction()}}
-                </div>
-                <div>
-                    <h4>Your potential Winnings:</h4>
-                    {{bet*100 / value}}
-                </div>
+        <mat-grid-tile class="resultBox mat-elevation-z5" colspan="1">
+            <div>
+                <h4>Your Odds:</h4>
+                <mat-chip-list>
+                    <mat-chip>
+                        {{getFraction()}}
+                    </mat-chip>
+                </mat-chip-list>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile class="resultBox mat-elevation-z5">
+            <div>
+                <h4>Your Confidence Level</h4>
+                <mat-chip-list>
+                    <mat-chip>{{getConfidence()}}</mat-chip>
+                </mat-chip-list>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile class="resultBox mat-elevation-z5" colspan="2">
+            <div>
+                <h4>Your potential Winnings:</h4>
+                <mat-chip-list>
+                    <mat-chip>
+                        {{bet*100 / value}}
+                    </mat-chip>
+                </mat-chip-list>
             </div>
         </mat-grid-tile>
         <mat-grid-tile colspan="1">
             <div class="space"></div>
         </mat-grid-tile>
-
     </mat-grid-list>
 </div>
