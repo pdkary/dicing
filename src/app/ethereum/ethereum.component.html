@@ -8,7 +8,7 @@
         </mat-grid-tile>
         <mat-grid-tile colspan="4"></mat-grid-tile>
         <mat-grid-tile colspan="3" rowspan="4">
-            <app-balance-box [EthBalance]="ethBalance" [EBalance]="eBalance" [NBalance]="nBalance"></app-balance-box>
+            <app-balance-box [EthBalance]="ethBalance" [PlayBalance]="eBalance" ></app-balance-box>
         </mat-grid-tile>
         <mat-grid-tile colspan="4">
             <div class="bet-field">
@@ -29,33 +29,27 @@
                 <button mat-raised-button>Roll em</button>
             </div>
         </mat-grid-tile>
-        <mat-grid-tile class="resultBox mat-elevation-z5" colspan="1">
-            <div>
-                <h4>Your Odds:</h4>
-                <mat-chip-list>
-                    <mat-chip>
-                        {{getFraction()}}
-                    </mat-chip>
-                </mat-chip-list>
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile class="resultBox mat-elevation-z5">
-            <div>
-                <h4>Your Confidence Level</h4>
-                <mat-chip-list>
-                    <mat-chip>{{getConfidence()}}</mat-chip>
-                </mat-chip-list>
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile class="resultBox mat-elevation-z5" colspan="2">
-            <div>
-                <h4>Your potential Winnings:</h4>
-                <mat-chip-list>
-                    <mat-chip>
-                        {{bet*100 / value}}
-                    </mat-chip>
-                </mat-chip-list>
-            </div>
+        <mat-grid-tile class="resultBox" colspan="4">
+            <mat-table [dataSource]="getBetData()">
+                <ng-container matColumnDef="odds">
+                    <th mat-header-cell *matHeaderCellDef>Your Odds</th>
+                    <td mat-cell *matCellDef="let element">{{element.odds}}</td>
+                </ng-container>
+                <ng-container matColumnDef="confidence">
+                    <th mat-header-cell *matHeaderCellDef>Your Confidence Level</th>
+                    <td mat-cell *matCellDef="let element">{{element.confidence}}</td>
+                </ng-container>
+                <ng-container matColumnDef="winnings">
+                    <th mat-header-cell *matHeaderCellDef>Your Potential Winnings</th>
+                    <td mat-cell *matCellDef="let element">{{element.winnings}}</td>
+                </ng-container>
+                <ng-container matColumnDef="reroll">
+                    <th mat-header-cell *matHeaderCellDef>Your Reroll Potential</th>
+                    <td mat-cell *matCellDef="let element">{{element.reroll}}</td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </mat-table>
         </mat-grid-tile>
         <mat-grid-tile colspan="1">
             <div class="space"></div>

@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { EthereumComponent } from './ethereum/ethereum.component';
 import { BalanceBoxComponent } from './balance-box/balance-box.component';
 import { FormsModule } from '../../node_modules/@angular/forms';
+import { MatTableModule } from '@angular/material/table';
 
 const appRoutes: Routes = [
   {
@@ -34,11 +35,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    EthereumComponent,
-    BalanceBoxComponent,
-  ],
+  declarations: [AppComponent, EthereumComponent, BalanceBoxComponent],
   imports: [
     BrowserModule,
     MatGridListModule,
@@ -53,7 +50,8 @@ const appRoutes: Routes = [
     MatSliderModule,
     MatChipsModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTableModule
   ],
   bootstrap: [AppComponent]
 })

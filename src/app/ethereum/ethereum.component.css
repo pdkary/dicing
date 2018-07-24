@@ -43,25 +43,36 @@ mat-slider {
   border-color: black;
 }
 .resultBox {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  width: 100%;
   margin-left: 5em;
-  width: 90%;
-  display: flex;
-  margin-right: 1em;
 }
-.resultBox div {
-  width: 90%;
+.resultBox mat-table {
+  width: 100%;
+  height: 80%;
+}
+td {
+  width: 15em;
+  margin-top: 1em;
+  color: black;
+}
+th {
   text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-size: 1em;
+  color: black;
 }
 mat-chip-list {
   display: flex;
   justify-content: center;
+  margin-top: 1em;
 }
-.resultBox h4 {
-  width: 90%;
+.chip-title {
+  width: 100%;
   background-color: black;
   color: white;
-  padding: .2em;
-  margin-top: -1em;
-  border-radius: .3em;
+  padding: 0.4em;
+  padding-top: 1em;
 }

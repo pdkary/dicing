@@ -3,6 +3,12 @@ import { EtherscanService } from '../etherscan.service';
 import { Observable, of } from 'rxjs';
 import { BalanceCall } from '../balanceCall';
 
+export interface BetData {
+  odds: string;
+  confidence: string;
+  winnings: number;
+  reroll: number;
+}
 @Component({
   selector: 'app-ethereum',
   templateUrl: './ethereum.component.html',
@@ -16,6 +22,8 @@ export class EthereumComponent implements OnInit {
   value = 1;
   bet = 1;
   fraction: number;
+
+  displayedColumns = ['odds', 'confidence', 'winnings','reroll'];
   constructor(private etherscanService: EtherscanService) {}
 
   ngOnInit() {
@@ -64,6 +72,23 @@ export class EthereumComponent implements OnInit {
     }
   }
   getConfidence(): string {
-    return "placeholder";
+    return 'placeholder';
+  }
+  getWinnigs(): number {
+    return (this.bet * 100) / this.value;
+  }
+  getReroll(): number {
+    return 0;
+  }
+  getBetData(): BetData[] {
+    const betData: BetData[] = [
+      {
+        'odds': this.getFraction(),
+        'confidence': this.getConfidence(),
+        'winnings': this.getWinnigs(),
+        'reroll': this.getReroll()
+      }
+    ];
+    return betData;
   }
 }

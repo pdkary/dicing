@@ -12,8 +12,7 @@ import { THIS_EXPR } from '../../../node_modules/@angular/compiler/src/output/ou
 export class BalanceBoxComponent implements OnInit {
 
   @Input() EthBalance: number;
-  @Input() EBalance: number;
-  @Input() NBalance: number;
+  @Input() PlayBalance: number;
   totalSupply: number;
 
   constructor(private etherscanService: EtherscanService) { }
