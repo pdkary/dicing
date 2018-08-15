@@ -1,0 +1,78 @@
+.container {
+    width: 90%;
+    height: 45em;
+    padding: 1em;
+  }
+  .ethLogo {
+    width: 60%;
+    margin-left: -25em;
+  }
+  app-balance-box {
+    float: right;
+    max-height: 20em;
+    display: flex;
+  }
+  .input {
+    width: 5em;
+  }
+  mat-form-field {
+    width: 40%;
+    padding: 1em;
+  }
+  .address {
+    width: 60%;
+  }
+  .bet {
+    width: 30%;
+  }
+  mat-slider {
+    width: 70%;
+    margin-left: 1em;
+  }
+  .bet-field {
+    width: 100%;
+    display: flex;
+  }
+  .sliderbox {
+    width: 90%;
+  }
+  .sliderbox button {
+    float: right;
+    background-color: #ffd63b;
+    border-color: black;
+  }
+  .resultBox {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    margin-left: 5em;
+  }
+  .resultBox mat-table {
+    width: 100%;
+    height: 80%;
+  }
+  td {
+    width: 15em;
+    margin-top: 1em;
+    color: black;
+  }
+  th {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+    font-size: 1em;
+    color: black;
+  }
+  mat-chip-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+  }
+  .chip-title {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 0.4em;
+    padding-top: 1em;
+  }
+  

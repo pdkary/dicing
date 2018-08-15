@@ -8,7 +8,7 @@
         </mat-grid-tile>
         <mat-grid-tile colspan="4"></mat-grid-tile>
         <mat-grid-tile colspan="3" rowspan="4">
-            <app-balance-box [EthBalance]="ethBalance" [PlayBalance]="eBalance" ></app-balance-box>
+            <app-balance-box [EthBalance]="ethBalance" [PlayBalance]="eBalance" [Eth]="true"></app-balance-box>
         </mat-grid-tile>
         <mat-grid-tile colspan="4">
             <div class="bet-field">
@@ -33,19 +33,27 @@
             <mat-table [dataSource]="getBetData()">
                 <ng-container matColumnDef="odds">
                     <th mat-header-cell *matHeaderCellDef>Your Odds</th>
-                    <td mat-cell *matCellDef="let element">{{element.odds}}</td>
+                    <td mat-cell *matCellDef="let element">
+                        <br> {{element.odds}}
+                    </td>
                 </ng-container>
                 <ng-container matColumnDef="confidence">
                     <th mat-header-cell *matHeaderCellDef>Your Confidence Level</th>
-                    <td mat-cell *matCellDef="let element">{{element.confidence}}</td>
+                    <td mat-cell *matCellDef="let element">
+                        <br>{{element.confidence}}
+                    </td>
                 </ng-container>
                 <ng-container matColumnDef="winnings">
                     <th mat-header-cell *matHeaderCellDef>Your Potential Winnings</th>
-                    <td mat-cell *matCellDef="let element">{{element.winnings}}</td>
+                    <td mat-cell *matCellDef="let element">
+                        <br> {{element.winnings}}
+                    </td>
                 </ng-container>
                 <ng-container matColumnDef="reroll">
                     <th mat-header-cell *matHeaderCellDef>Your Reroll Potential</th>
-                    <td mat-cell *matCellDef="let element">{{element.reroll}}</td>
+                    <td mat-cell *matCellDef="let element">
+                        <br>{{element.reroll}}
+                    </td>
                 </ng-container>
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

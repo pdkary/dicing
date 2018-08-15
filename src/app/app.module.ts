@@ -21,6 +21,7 @@ import { EthereumComponent } from './ethereum/ethereum.component';
 import { BalanceBoxComponent } from './balance-box/balance-box.component';
 import { FormsModule } from '../../node_modules/@angular/forms';
 import { MatTableModule } from '@angular/material/table';
+import { NeoComponent } from './neo/neo.component';
 
 const appRoutes: Routes = [
   {
@@ -35,7 +36,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, EthereumComponent, BalanceBoxComponent],
+  declarations: [AppComponent, EthereumComponent, BalanceBoxComponent, NeoComponent],
   imports: [
     BrowserModule,
     MatGridListModule,

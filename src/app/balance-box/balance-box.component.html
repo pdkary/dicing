@@ -6,7 +6,8 @@
     <mat-chip-list class="mat-chip-list-stacked">
       <p>Balances</p>
       <mat-chip>
-        <mat-icon svgIcon="Eth"></mat-icon>
+        <mat-icon *ngIf="Eth" svgIcon="Eth"></mat-icon>
+        <mat-icon *ngIf="!Eth" svgIcon="Neo"></mat-icon>
         {{EthBalance}}
       </mat-chip>
       <mat-chip>

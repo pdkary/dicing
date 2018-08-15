@@ -10,11 +10,11 @@ export interface BetData {
   reroll: number;
 }
 @Component({
-  selector: 'app-ethereum',
-  templateUrl: './ethereum.component.html',
-  styleUrls: ['./ethereum.component.css']
+  selector: 'app-neo',
+  templateUrl: './neo.component.html',
+  styleUrls: ['./neo.component.css']
 })
-export class EthereumComponent implements OnInit {
+export class NeoComponent implements OnInit {
   ethBalance: number;
   nBalance: number;
   eBalance: number;

@@ -13,6 +13,7 @@ export class BalanceBoxComponent implements OnInit {
 
   @Input() EthBalance: number;
   @Input() PlayBalance: number;
+  @Input() Eth: boolean;
   totalSupply: number;
 
   constructor(private etherscanService: EtherscanService) { }
