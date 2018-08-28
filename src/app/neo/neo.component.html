@@ -1,66 +1,77 @@
-<div class="container mat-elevation-z5">
-  <mat-grid-list cols="7" rowHeight="2:1">
-      <mat-grid-tile colspan="4" rowspan="2">
-          <img class="ethLogo" src="../../assets/img/neo-logo.png">
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3">
-          <div class="space"></div>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="4"></mat-grid-tile>
-      <mat-grid-tile colspan="3" rowspan="4">
-          <app-balance-box [EthBalance]="ethBalance" [PlayBalance]="eBalance" [Eth]="false"></app-balance-box>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="4">
-          <div class="bet-field">
-              <mat-form-field appearance="outline" class="address">
-                  <mat-label>Ethereum Address</mat-label>
-                  <input matInput [value]="user">
-              </mat-form-field>
-              <mat-form-field appearance="outline" class="bet">
-                  <mat-label>Your Bet</mat-label>
-                  <mat-icon matSuffix svgIcon="Neo"></mat-icon>
-                  <input matInput [(ngModel)]="bet">
-              </mat-form-field>
-          </div>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="4">
-          <div class="sliderbox">
-              <mat-slider thumbLabel [(ngModel)]="value"></mat-slider>
-              <button mat-raised-button>Roll em</button>
-          </div>
-      </mat-grid-tile>
-      <mat-grid-tile class="resultBox" colspan="4">
-          <mat-table [dataSource]="getBetData()">
-              <ng-container matColumnDef="odds">
-                  <th mat-header-cell *matHeaderCellDef>Your Odds</th>
-                  <td mat-cell *matCellDef="let element">
-                      <br> {{element.odds}}
-                  </td>
-              </ng-container>
-              <ng-container matColumnDef="confidence">
-                  <th mat-header-cell *matHeaderCellDef>Your Confidence Level</th>
-                  <td mat-cell *matCellDef="let element">
-                      <br>{{element.confidence}}
-                  </td>
-              </ng-container>
-              <ng-container matColumnDef="winnings">
-                  <th mat-header-cell *matHeaderCellDef>Your Potential Winnings</th>
-                  <td mat-cell *matCellDef="let element">
-                      <br> {{element.winnings}}
-                  </td>
-              </ng-container>
-              <ng-container matColumnDef="reroll">
-                  <th mat-header-cell *matHeaderCellDef>Your Reroll Potential</th>
-                  <td mat-cell *matCellDef="let element">
-                      <br>{{element.reroll}}
-                  </td>
-              </ng-container>
-              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </mat-table>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="1">
-          <div class="space"></div>
-      </mat-grid-tile>
-  </mat-grid-list>
+<div class="container">
+    <mat-grid-list cols="7" rowHeight="2:1">
+        <mat-grid-tile colspan="4" rowspan="2">
+            <img class="ethLogo" src="../../assets/img/neo-logo.png">
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3" rowspan="2"></mat-grid-tile>
+        <mat-grid-tile colspan="4"></mat-grid-tile>
+        <mat-grid-tile colspan="3" rowspan="3">
+            <app-balance-box [EthBalance]="ethBalance" [PlayBalance]="eBalance" [Eth]="false"></app-balance-box>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="4" rowspan="1">
+            <div class="bet-field">
+                <mat-form-field appearance="outline" class="address">
+                    <mat-label>Ethereum Address</mat-label>
+                    <input matInput [value]="user">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="bet">
+                    <mat-label>Your Bet</mat-label>
+                    <mat-icon matSuffix svgIcon="Neo"></mat-icon>
+                    <input matInput [(ngModel)]="bet">
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="4">
+            <div class="sliderbox">
+                <mat-slider thumbLabel [(ngModel)]="value"></mat-slider>
+                <button class="green" mat-raised-button>Roll em</button>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile class="resultBox" colspan="4" rowspan="2">
+            <mat-table [dataSource]="getBetData()">
+                <ng-container matColumnDef="odds">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <span>
+                            Your Odds
+                        </span>
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        <br> {{element.odds}}
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="confidence">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <span>
+                            Your Confidence Level
+                        </span>
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        <br>{{element.confidence}}
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="winnings">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <span>
+                            Your Potential Winnings
+                        </span>
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                        <br> {{element.winnings}}
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="reroll">
+                    <th mat-header-cell *matHeaderCellDef><span>Your Reroll Potential</span></th>
+                    <td mat-cell *matCellDef="let element">
+                        <br>{{element.reroll}}
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </mat-table>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+            <div class="space"></div>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>

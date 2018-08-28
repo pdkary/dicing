@@ -1,27 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import {
-  MatGridListModule,
-  MatListModule,
+  MatCardModule,
+  MatDividerModule,
   MatFormFieldModule,
+  MatGridListModule,
   MatInputModule,
-  MatCardModule
+  MatListModule,
+  MatTabsModule
 } from '@angular/material';
-import { MatChipsModule } from '@angular/material/chips';
-import { HttpClientModule } from '@angular/common/http';
-import { MatIconModule } from '@angular/material/icon';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule, MatSlider } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
-import { AppComponent } from './app.component';
-import { EthereumComponent } from './ethereum/ethereum.component';
-import { BalanceBoxComponent } from './balance-box/balance-box.component';
-import { FormsModule } from '../../node_modules/@angular/forms';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSliderModule } from '@angular/material/slider';
 import { MatTableModule } from '@angular/material/table';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Routes } from '@angular/router';
+import { FormsModule } from '../../node_modules/@angular/forms';
+import { AppComponent } from './app.component';
+import { BalanceBoxComponent } from './balance-box/balance-box.component';
+import { EthereumComponent } from './ethereum/ethereum.component';
 import { NeoComponent } from './neo/neo.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   {
@@ -36,7 +38,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, EthereumComponent, BalanceBoxComponent, NeoComponent],
+  declarations: [AppComponent, EthereumComponent, BalanceBoxComponent, NeoComponent, HomeComponent],
   imports: [
     BrowserModule,
     MatGridListModule,
@@ -52,7 +54,10 @@ const appRoutes: Routes = [
     MatChipsModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatTableModule
+    MatTableModule,
+    MatListModule,
+    MatDividerModule,
+    MatTabsModule
   ],
   bootstrap: [AppComponent]
 })

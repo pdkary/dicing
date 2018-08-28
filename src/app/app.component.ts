@@ -15,6 +15,6 @@ export class AppComponent {
       this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/neoplay.svg')
     );
     this.matIconRegistry.addSvgIcon('Eth', this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/ethIcon.svg'));
-    this.matIconRegistry.addSvgIcon('Neo', this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/neo-coin.svg'));
+    this.matIconRegistry.addSvgIcon('Neo', this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/neo-icon.svg'));
   }
 }

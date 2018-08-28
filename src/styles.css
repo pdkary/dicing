@@ -1,4 +1,108 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
+body * {
+    font-family: "PT Sans", Tahoma, "Geneva", "sans-serif"
+}
+.dim {
+  background-color: rgba(0,0,0,.5);
+}
+.green {
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 45em;
+  padding: 1em;
+  background-color: #FBFBFB;
+}
+.mat-form-field-outline {
+    background-color: white;
+}
+.ethLogo {
+  width: 70%;
+  margin-left: -15em;
+}
+app-balance-box {
+  max-height: 20em;
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #adadad;
+  border-radius: 3%;
+}
+.input {
+  width: 5em;
+}
+mat-form-field {
+  width: 40%;
+  padding: 1em;
+}
+.address {
+  width: 60%;
+}
+.bet {
+  width: 30%;
+}
+mat-slider {
+  width: 70%;
+  margin-left: 1em;
+}
+.bet-field {
+  width: 100%;
+  display: flex;
+}
+.sliderbox {
+  width: 90%;
+}
+.sliderbox button {
+  float: right;
+  background-color: #ffd63b;
+  border-color: black;
+}
+.resultBox {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 100%;
+  margin-left: 5em;
+}
+.resultBox mat-table {
+  width: 100%;
+  border: 1px solid #adadad;
+  border-radius: .3em;
+}
+td {
+  width: 15em;
+  color: black;
+}
+th {
+  text-align: center;
+  font-size: 1em;
+  color: black;
+}
+th span {
+  padding-top: 1em;
+  margin-top: 1em;
+}
+mat-chip-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+.chip-title {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 0.4em;
+  padding-top: 1em;
+}
+/* ///////////// */
+.padded-height {
+    height: 90%;
+}
+.nudge-right {
+  padding-left: .2em;
+}
